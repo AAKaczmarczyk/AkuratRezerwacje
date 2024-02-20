@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akurat Pizza&Pub STRONA REZERWACYJNA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+</head>
+<body>
+
+<div class="login-container">
+    <!-- Login Button -->
+    <a href="/auth/google" class="btn btn-primary">Login with Google</a>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Login Form -->
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email address:</label>
+              <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <hr>
+          <!-- Sign Up Form -->
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email address:</label>
+              <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Reservation Section (Initially Hidden) -->
+<div id="reservation-section" style="display:none;">
+    <h1>Zarezerwuj stolik</h1>
+    <form id="reservation-form" class="mb-3">
+        <!-- Reservation form fields -->
+    </form>
+    <h2>Dostępne stoliki</h2>
+    <div id="available-tables" class="mb-3"></div>
+</div>
+
+<!-- Bootstrap Bundle with Popper and Custom Script -->
+<!-- Bootstrap Bundle with Popper -->
+<!-- Bootstrap Bundle with Popper.js for Bootstrap 5.3.2 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="/js/script.js"></script>
+<script>
+    // Example login function - modify as per your authentication logic
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Dummy login validation: In production, validate against server-side
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+        if(email && password) { // This should be replaced with actual validation
+            document.getElementById('reservation-section').style.display = 'block';
+            $('#loginModal').modal('hide');
+        } else {
+            alert('Please enter valid credentials'); // Provide user feedback
+        }
+    });
+</script>
+</body>
+</html>

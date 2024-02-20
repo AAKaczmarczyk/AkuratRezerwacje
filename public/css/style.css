@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 20px;
+    background-image: url('/images/background.jpg'); /* Corrected line */
+    background-size: cover;
+    background-position: center;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes the container take the full height of the viewport */
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
