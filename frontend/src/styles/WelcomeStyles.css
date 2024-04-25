@@ -1,0 +1,30 @@
+/* /frontend/src/styles/WelcomeStyles.css */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.welcome h1 {
+    margin-bottom: 20px;
+}
+
+.loginButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4285f4; /* Google blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+    background-color: #357ae8; /* Darker Google blue */
+}

@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
+const { Pool } = require('pg');
+require('dotenv').config();  // Make sure you have dotenv configured to use environment variables
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-        console.log('MongoDB connected...');
-    } catch (error) {
-        console.error('Database connection failed:', error);
-        process.exit(1);
-    }
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,  // Make sure DATABASE_URL is correctly set in your .env file
+});
+
+const query = (text, params, callback) => {
+    return pool.query(text, params, callback);
 };
 
-module.exports = connectDB;
+module.exports = {
+    query
+};
